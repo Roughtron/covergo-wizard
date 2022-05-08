@@ -1,0 +1,48 @@
+@require './layout';
+@require './typography';
+@require './shadows';
+
+*
+  margin 0
+  padding 0
+
+html,
+body
+  margin 0
+  padding 0
+  height 100%
+
+for i in (0..10)
+  for s, side in $sides
+    .m{s}-{i}
+      margin-{side} $space * i !important
+    .p{s}-{i}
+      padding-{side} $space * i !important
+  .mx-{i}
+    margin-right $space * i !important
+    margin-left $space * i !important
+  .my-{i}
+    margin-top $space * i !important
+    margin-bottom $space * i !important
+  .m-{i}
+    margin $space * i !important
+  .px-{i}
+    padding-right $space * i !important
+    padding-left $space * i !important
+  .py-{i}
+    padding-top $space * i !important
+    padding-bottom $space * i !important
+  .p-{i}
+    padding $space * i !important
+
+.ml-auto
+  margin-left auto !important
+.mr-auto
+  margin-right auto !important
+.mx-auto
+  margin-left auto !important
+  margin-right auto !important
+
+for value in left center right
+  .text-{value}
+    text-align value
